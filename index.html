@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Abdul Hafeez Mohamed Abu-Grara — System Engineer | Linux Administrator | Telecom & RF Optimization Engineer" />
+    <title>Abdul Hafeez Mohamed Abu-Grara | Portfolio</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons (Font Awesome) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Header / Nav -->
+    <header class="site-header" id="top">
+      <nav class="nav container" aria-label="Primary navigation">
+        <a class="brand" href="#top" aria-label="Go to top">
+          <span class="brand__mark">AH</span>
+          <span class="brand__text">Abdul Hafeez</span>
+        </a>
+
+        <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+        </button>
+
+        <div class="nav__links" id="navLinks">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#certifications">Certifications</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+          <i class="fa-solid fa-moon" id="themeIcon" aria-hidden="true"></i>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero">
+        <div class="container hero__grid">
+          <div class="hero__content reveal">
+            <p class="hero__eyebrow">System Engineer</p>
+            <h1 class="hero__title">Abdul Hafeez Mohamed Abu-Grara</h1>
+            <p class="hero__subtitle">
+              System Engineer <span class="dot">•</span> Linux Administrator <span class="dot">•</span> Telecom & RF Optimization Engineer
+            </p>
+            <p class="hero__intro">
+              Experienced in Linux Administration, Oracle Database, RF Optimization, and system automation.
+            </p>
+
+            <div class="hero__cta">
+              <!-- Replace href with your actual CV file path, e.g., ./assets/Abdul-Hafeez-CV.pdf -->
+              <a class="btn btn--primary" href="#" download>
+                <i class="fa-solid fa-download" aria-hidden="true"></i>
+                Download CV
+              </a>
+              <a class="btn btn--ghost" href="#contact">
+                <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                Contact Me
+              </a>
+            </div>
+
+            <div class="hero__meta">
+              <div class="pill">
+                <i class="fa-brands fa-linux" aria-hidden="true"></i>
+                <span>Linux</span>
+              </div>
+              <div class="pill">
+                <i class="fa-solid fa-database" aria-hidden="true"></i>
+                <span>Oracle DB</span>
+              </div>
+              <div class="pill">
+                <i class="fa-solid fa-signal" aria-hidden="true"></i>
+                <span>RF Optimization</span>
+              </div>
+              <div class="pill">
+                <i class="fa-solid fa-gears" aria-hidden="true"></i>
+                <span>Automation</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero__card reveal" aria-hidden="false">
+            <div class="profile-card">
+              <div class="profile-card__avatar" aria-label="Profile placeholder">
+                <i class="fa-solid fa-user-gear" aria-hidden="true"></i>
+              </div>
+              <div class="profile-card__info">
+                <h2 class="profile-card__name">Abdul Hafeez</h2>
+                <p class="profile-card__role">System Engineer</p>
+                <div class="profile-card__stats">
+                  <div class="stat">
+                    <span class="stat__label">Focus</span>
+                    <span class="stat__value">Reliable Systems</span>
+                  </div>
+                  <div class="stat">
+                    <span class="stat__label">Strength</span>
+                    <span class="stat__value">Troubleshooting</span>
+                  </div>
+                  <div class="stat">
+                    <span class="stat__label">Interest</span>
+                    <span class="stat__value">Security</span>
+                  </div>
+                </div>
+
+                <div class="profile-card__links">
+                  <!-- Replace links with your real URLs -->
+                  <a class="icon-link" href="mailto:your.email@example.com" aria-label="Email">
+                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                  </a>
+                  <a class="icon-link" href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+                  </a>
+                  <a class="icon-link" href="https://github.com/" target="_blank" rel="noreferrer" aria-label="GitHub">
+                    <i class="fa-brands fa-github" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <p class="hero__note">
+              Tip: Replace the avatar placeholder with your photo (e.g., using an <code>&lt;img&gt;</code> tag).
+            </p>
+          </div>
+        </div>
+
+        <a class="scroll-indicator" href="#about" aria-label="Scroll to About section">
+          <span>Scroll</span>
+          <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+        </a>
+      </section>
+
+      <!-- About -->
+      <section class="section" id="about">
+        <div class="container">
+          <div class="section__header reveal">
+            <h2 class="section__title">About Me</h2>
+            <p class="section__subtitle">
+              Communication Engineering background with hands-on experience across Linux, databases, and RF optimization.
+            </p>
+          </div>
+
+          <div class="about-grid">
+            <div class="card reveal">
+              <h3 class="card__title">
+                <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                Background
+              </h3>
+              <p class="muted">
+                I have a background in <strong>Communication Engineering</strong>, and I enjoy building and maintaining systems that
+                are secure, stable, and easy to operate.
+              </p>
+            </div>
+
+            <div class="card reveal">
+              <h3 class="card__title">
+                <i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
+                Experience
+              </h3>
+              <p class="muted">
+                Experienced with <strong>Linux systems</strong>, <strong>Oracle DB</strong>, <strong>RF drive testing</strong>, and
+                <strong>infrastructure troubleshooting</strong> in real-world environments.
+              </p>
+            </div>
+
+            <div class="card reveal">
+              <h3 class="card__title">
+                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                Passion
+              </h3>
+              <p class="muted">
+                Passionate about <strong>automation</strong>, <strong>security</strong>, and creating <strong>reliable IT systems</strong>
+                that scale and remain maintainable over time.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section class="section section--alt" id="skills">
+        <div class="container">
+          <div class="section__header reveal">
+            <h2 class="section__title">Skills</h2>
+            <p class="section__subtitle">A blend of telecom expertise and systems engineering.</p>
+          </div>
+
+          <div class="skills-grid">
+            <article class="card reveal">
+              <h3 class="card__title">
+                <i class="fa-solid fa-tower-cell" aria-hidden="true"></i>
+                Telecom & RF
+              </h3>
+              <ul class="list">
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Drive Testing</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> RF Optimization</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Post Processing</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> 2G / 3G / 4G / 5G troubleshooting</li>
+              </ul>
+            </article>
+
+            <article class="card reveal">
+              <h3 class="card__title">
+                <i class="fa-solid fa-server" aria-hidden="true"></i>
+                System Administration
+              </h3>
+              <ul class="list">
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Oracle Linux</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Shell scripting</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Docker</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Security hardening</li>
+              </ul>
+            </article>
+
+            <article class="card reveal">
+              <h3 class="card__title">
+                <i class="fa-solid fa-toolbox" aria-hidden="true"></i>
+                Tools & Technologies
+              </h3>
+              <ul class="list">
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> TEMS Investigation</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> TEMS Discovery</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> QGIS</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> MapInfo</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Power BI</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Python (NumPy, Pandas, Matplotlib)</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section class="section" id="experience">
+        <div class="container">
+          <div class="section__header reveal">
+            <h2 class="section__title">Experience</h2>
+            <p class="section__subtitle">Roles across IT infrastructure and telecom optimization.</p>
+          </div>
+
+          <div class="timeline">
+            <div class="timeline__item card reveal">
+              <div class="timeline__icon" aria-hidden="true">
+                <i class="fa-solid fa-building" aria-hidden="true"></i>
+              </div>
+              <div class="timeline__content">
+                <h3 class="timeline__title">System Administrator</h3>
+                <p class="timeline__org">Al Daleel Raqmee for IT & GIS</p>
+                <ul class="list list--compact">
+                  <li><i class="fa-solid fa-arrow-right" aria-hidden="true"></i> Linux administration and operational support</li>
+                  <li><i class="fa-solid fa-arrow-right" aria-hidden="true"></i> Infrastructure troubleshooting and reliability</li>
+                  <li><i class="fa-solid fa-arrow-right" aria-hidden="true"></i> Security hardening and system maintenance</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline__item card reveal">
+              <div class="timeline__icon" aria-hidden="true">
+                <i class="fa-solid fa-signal" aria-hidden="true"></i>
+              </div>
+              <div class="timeline__content">
+                <h3 class="timeline__title">RF Drive Test & Optimization Engineer</h3>
+                <p class="timeline__org">ZTE / Huawei / Ericsson projects</p>
+                <ul class="list list--compact">
+                  <li><i class="fa-solid fa-arrow-right" aria-hidden="true"></i> Drive testing, analysis, and post-processing</li>
+                  <li><i class="fa-solid fa-arrow-right" aria-hidden="true"></i> KPI tracking and optimization recommendations</li>
+                  <li><i class="fa-solid fa-arrow-right" aria-hidden="true"></i> 2G–5G troubleshooting and improvement actions</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section class="section section--alt" id="projects">
+        <div class="container">
+          <div class="section__header reveal">
+            <h2 class="section__title">Projects</h2>
+            <p class="section__subtitle">Practical work focused on performance, automation, and security.</p>
+          </div>
+
+          <div class="projects-grid">
+            <article class="card project reveal">
+              <div class="project__header">
+                <h3 class="project__title">RF Network Optimization</h3>
+                <span class="badge"><i class="fa-solid fa-tower-cell" aria-hidden="true"></i> Telecom</span>
+              </div>
+              <p class="muted">
+                Drive-test based analysis, issue identification, and optimization actions to improve coverage, quality, and user experience.
+              </p>
+              <div class="project__footer">
+                <span class="tag">Post Processing</span>
+                <span class="tag">KPIs</span>
+                <span class="tag">2G–5G</span>
+              </div>
+            </article>
+
+            <article class="card project reveal">
+              <div class="project__header">
+                <h3 class="project__title">Linux Infrastructure Automation</h3>
+                <span class="badge"><i class="fa-brands fa-linux" aria-hidden="true"></i> Linux</span>
+              </div>
+              <p class="muted">
+                Automation scripts for routine operational tasks, monitoring checks, and consistent configuration management.
+              </p>
+              <div class="project__footer">
+                <span class="tag">Shell</span>
+                <span class="tag">Python</span>
+                <span class="tag">Docker</span>
+              </div>
+            </article>
+
+            <article class="card project reveal">
+              <div class="project__header">
+                <h3 class="project__title">System Hardening & Security Implementation</h3>
+                <span class="badge"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Security</span>
+              </div>
+              <p class="muted">
+                Baseline hardening practices to reduce attack surface, improve auditing, and strengthen operational security.
+              </p>
+              <div class="project__footer">
+                <span class="tag">Hardening</span>
+                <span class="tag">Auditing</span>
+                <span class="tag">Best Practices</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Certifications -->
+      <section class="section" id="certifications">
+        <div class="container">
+          <div class="section__header reveal">
+            <h2 class="section__title">Certifications</h2>
+            <p class="section__subtitle">Selected training and certifications.</p>
+          </div>
+
+          <div class="cert-grid">
+            <div class="card reveal"><i class="fa-solid fa-certificate" aria-hidden="true"></i> RF Basics (2G–5G)</div>
+            <div class="card reveal"><i class="fa-solid fa-certificate" aria-hidden="true"></i> Drive Testing</div>
+            <div class="card reveal"><i class="fa-solid fa-certificate" aria-hidden="true"></i> RF Optimization</div>
+            <div class="card reveal"><i class="fa-solid fa-certificate" aria-hidden="true"></i> Microwave Transmission</div>
+            <div class="card reveal"><i class="fa-solid fa-certificate" aria-hidden="true"></i> Radio Planning</div>
+            <div class="card reveal"><i class="fa-solid fa-certificate" aria-hidden="true"></i> 4G CSFB Architecture</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="section section--alt" id="contact">
+        <div class="container">
+          <div class="section__header reveal">
+            <h2 class="section__title">Contact</h2>
+            <p class="section__subtitle">Let’s connect. I’m available for system engineering and telecom optimization opportunities.</p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="card reveal">
+              <h3 class="card__title">
+                <i class="fa-solid fa-address-card" aria-hidden="true"></i>
+                Contact Links
+              </h3>
+
+              <!-- Replace with your actual details -->
+              <div class="contact-links">
+                <a class="contact-link" href="mailto:your.email@example.com">
+                  <span class="contact-link__icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span>
+                  <span class="contact-link__text">
+                    <span class="contact-link__label">Email</span>
+                    <span class="contact-link__value">your.email@example.com</span>
+                  </span>
+                </a>
+
+                <a class="contact-link" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+                  <span class="contact-link__icon"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></span>
+                  <span class="contact-link__text">
+                    <span class="contact-link__label">LinkedIn</span>
+                    <span class="contact-link__value">linkedin.com/in/your-profile</span>
+                  </span>
+                </a>
+
+                <a class="contact-link" href="https://github.com/" target="_blank" rel="noreferrer">
+                  <span class="contact-link__icon"><i class="fa-brands fa-github" aria-hidden="true"></i></span>
+                  <span class="contact-link__text">
+                    <span class="contact-link__label">GitHub</span>
+                    <span class="contact-link__value">github.com/your-username</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            <div class="card reveal">
+              <h3 class="card__title">
+                <i class="fa-solid fa-comment-dots" aria-hidden="true"></i>
+                Quick Message
+              </h3>
+
+              <!-- No backend: this is a friendly mailto form -->
+              <form class="contact-form" id="contactForm">
+                <label>
+                  <span>Name</span>
+                  <input type="text" id="name" name="name" placeholder="Your name" required />
+                </label>
+
+                <label>
+                  <span>Subject</span>
+                  <input type="text" id="subject" name="subject" placeholder="Project / Opportunity" required />
+                </label>
+
+                <label>
+                  <span>Message</span>
+                  <textarea id="message" name="message" placeholder="Write your message..." rows="5" required></textarea>
+                </label>
+
+                <button class="btn btn--primary" type="submit">
+                  <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                  Send via Email
+                </button>
+
+                <p class="muted small">
+                  This form opens your email client (no backend required).
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer__grid">
+        <p class="footer__copy">
+          © <span id="year"></span> Abdul Hafeez Mohamed Abu-Grara. All rights reserved.
+        </p>
+
+        <div class="footer__links">
+          <a class="icon-link" href="mailto:your.email@example.com" aria-label="Email">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          </a>
+          <a class="icon-link" href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+          </a>
+          <a class="icon-link" href="https://github.com/" target="_blank" rel="noreferrer" aria-label="GitHub">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
