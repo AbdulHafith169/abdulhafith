@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abdul Hafeez Mohamed Abu-Grara | System Engineer</title>
+  <meta name="description" content="Portfolio of Abdul Hafeez Mohamed Abu-Grara – System Engineer, Linux Administrator, Telecom & RF Optimization Engineer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#hero" class="nav__logo">AH.</a>
+
+      <ul class="nav__menu" id="nav-menu">
+        <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#skills" class="nav__link">Skills</a></li>
+        <li><a href="#experience" class="nav__link">Experience</a></li>
+        <li><a href="#projects" class="nav__link">Projects</a></li>
+        <li><a href="#certifications" class="nav__link">Certifications</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
+          <i class="fas fa-moon" id="theme-icon"></i>
+        </button>
+        <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero__bg-grid" aria-hidden="true"></div>
+    <div class="container hero__content">
+      <p class="hero__greeting animate-fade-up">Hello, I'm</p>
+      <h1 class="hero__name animate-fade-up delay-1">Abdul Hafeez<br>Mohamed Abu-Grara</h1>
+      <h2 class="hero__title animate-fade-up delay-2">
+        <span class="typed-text" id="typed-text"></span><span class="cursor" aria-hidden="true">|</span>
+      </h2>
+      <p class="hero__intro animate-fade-up delay-3">
+        Experienced in Linux Administration, Oracle Database, RF Optimization,<br class="hide-mobile"> and system automation.
+      </p>
+      <div class="hero__cta animate-fade-up delay-4">
+        <a href="cv/Abdul_Hafeez_CV.pdf" class="btn btn--primary" download>
+          <i class="fas fa-download"></i> Download CV
+        </a>
+        <a href="#contact" class="btn btn--outline">
+          <i class="fas fa-envelope"></i> Contact Me
+        </a>
+      </div>
+      <div class="hero__socials animate-fade-up delay-5">
+        <a href="mailto:abdulhafeez@example.com" aria-label="Email" class="social-icon"><i class="fas fa-envelope"></i></a>
+        <a href="https://linkedin.com/in/abdulhafeez" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/AbdulHafith169" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-icon"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+    <a href="#about" class="hero__scroll-down" aria-label="Scroll down">
+      <i class="fas fa-chevron-down"></i>
+    </a>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section__title reveal">About Me</h2>
+      <div class="about__grid">
+        <div class="about__avatar reveal">
+          <div class="avatar-ring">
+            <div class="avatar-placeholder">
+              <i class="fas fa-user-tie"></i>
+            </div>
+          </div>
+        </div>
+        <div class="about__text reveal delay-1">
+          <p>
+            I'm a results-driven <strong>System Engineer</strong> with a solid background in
+            <strong>Communication Engineering</strong>. My expertise spans Linux system
+            administration, Oracle Database management, RF drive testing, and infrastructure
+            troubleshooting across diverse telecom environments.
+          </p>
+          <p>
+            I have hands-on experience deploying and maintaining enterprise Linux systems
+            (Oracle Linux), scripting automation with Bash and Python, and hardening server
+            environments against security threats. On the telecom side, I've led and supported
+            RF optimization projects for major vendors including <strong>ZTE</strong>,
+            <strong>Huawei</strong>, and <strong>Ericsson</strong>.
+          </p>
+          <p>
+            Passionate about automation, cybersecurity, and building reliable IT
+            infrastructure, I thrive in dynamic environments where problem-solving and
+            continuous improvement are valued.
+          </p>
+          <div class="about__tags">
+            <span class="tag"><i class="fas fa-map-marker-alt"></i> Riyadh, Saudi Arabia</span>
+            <span class="tag"><i class="fas fa-graduation-cap"></i> B.Sc. Communication Engineering</span>
+            <span class="tag"><i class="fas fa-briefcase"></i> Open to Opportunities</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section class="section section--alt" id="skills">
+    <div class="container">
+      <h2 class="section__title reveal">Skills</h2>
+      <div class="skills__grid">
+
+        <!-- Telecom & RF -->
+        <div class="skill-card reveal">
+          <div class="skill-card__icon">
+            <i class="fas fa-broadcast-tower"></i>
+          </div>
+          <h3 class="skill-card__title">Telecom &amp; RF</h3>
+          <ul class="skill-card__list">
+            <li><i class="fas fa-check-circle"></i> Drive Testing</li>
+            <li><i class="fas fa-check-circle"></i> RF Optimization</li>
+            <li><i class="fas fa-check-circle"></i> Post Processing</li>
+            <li><i class="fas fa-check-circle"></i> 2G / 3G / 4G / 5G Troubleshooting</li>
+          </ul>
+        </div>
+
+        <!-- System Administration -->
+        <div class="skill-card reveal delay-1">
+          <div class="skill-card__icon">
+            <i class="fas fa-server"></i>
+          </div>
+          <h3 class="skill-card__title">System Administration</h3>
+          <ul class="skill-card__list">
+            <li><i class="fas fa-check-circle"></i> Oracle Linux</li>
+            <li><i class="fas fa-check-circle"></i> Shell Scripting</li>
+            <li><i class="fas fa-check-circle"></i> Docker</li>
+            <li><i class="fas fa-check-circle"></i> Security Hardening</li>
+          </ul>
+        </div>
+
+        <!-- Tools & Technologies -->
+        <div class="skill-card reveal delay-2">
+          <div class="skill-card__icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3 class="skill-card__title">Tools &amp; Technologies</h3>
+          <ul class="skill-card__list">
+            <li><i class="fas fa-check-circle"></i> TEMS Investigation</li>
+            <li><i class="fas fa-check-circle"></i> TEMS Discovery</li>
+            <li><i class="fas fa-check-circle"></i> QGIS &amp; MapInfo</li>
+            <li><i class="fas fa-check-circle"></i> Power BI</li>
+            <li><i class="fas fa-check-circle"></i> Python (NumPy, Pandas, Matplotlib)</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Tech badges -->
+      <div class="tech-badges reveal delay-3">
+        <span class="badge"><i class="fab fa-linux"></i> Linux</span>
+        <span class="badge"><i class="fab fa-python"></i> Python</span>
+        <span class="badge"><i class="fab fa-docker"></i> Docker</span>
+        <span class="badge"><i class="fas fa-database"></i> Oracle DB</span>
+        <span class="badge"><i class="fas fa-network-wired"></i> Networking</span>
+        <span class="badge"><i class="fas fa-shield-alt"></i> Security</span>
+        <span class="badge"><i class="fas fa-chart-bar"></i> Power BI</span>
+        <span class="badge"><i class="fas fa-map"></i> GIS</span>
+        <span class="badge"><i class="fas fa-terminal"></i> Bash</span>
+        <span class="badge"><i class="fas fa-signal"></i> RF / 5G</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section class="section" id="experience">
+    <div class="container">
+      <h2 class="section__title reveal">Experience</h2>
+      <div class="timeline">
+
+        <div class="timeline__item reveal">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card">
+            <span class="timeline__date"><i class="fas fa-calendar-alt"></i> 2021 – Present</span>
+            <h3 class="timeline__role">System Administrator</h3>
+            <p class="timeline__company"><i class="fas fa-building"></i> Al Daleel Raqmee for IT &amp; GIS</p>
+            <ul class="timeline__details">
+              <li>Deployed and maintained Oracle Linux server environments for enterprise clients.</li>
+              <li>Developed shell and Python automation scripts to reduce manual operational workload.</li>
+              <li>Implemented Docker-based containerization for application services.</li>
+              <li>Applied CIS security hardening benchmarks to production systems.</li>
+              <li>Managed Oracle Database administration, backups, and performance tuning.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline__item reveal delay-1">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card">
+            <span class="timeline__date"><i class="fas fa-calendar-alt"></i> 2018 – 2021</span>
+            <h3 class="timeline__role">RF Drive Test &amp; Optimization Engineer</h3>
+            <p class="timeline__company"><i class="fas fa-building"></i> ZTE / Huawei / Ericsson Projects</p>
+            <ul class="timeline__details">
+              <li>Conducted RF drive testing across 2G / 3G / 4G networks using TEMS Investigation and TEMS Discovery.</li>
+              <li>Performed post-processing and analysis with QGIS, MapInfo, and Power BI dashboards.</li>
+              <li>Identified and resolved coverage, interference, and capacity issues in live networks.</li>
+              <li>Collaborated with multi-vendor project teams on network optimization deliverables.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section class="section section--alt" id="projects">
+    <div class="container">
+      <h2 class="section__title reveal">Projects</h2>
+      <div class="projects__grid">
+
+        <div class="project-card reveal">
+          <div class="project-card__icon"><i class="fas fa-broadcast-tower"></i></div>
+          <h3 class="project-card__title">RF Network Optimization</h3>
+          <p class="project-card__desc">
+            End-to-end RF network analysis and optimization for 4G LTE networks. Utilized
+            TEMS tools, QGIS-based geo-analysis, and Power BI reporting to improve coverage
+            and reduce call drops across multiple regions.
+          </p>
+          <div class="project-card__tags">
+            <span>TEMS</span><span>QGIS</span><span>Power BI</span><span>LTE</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal delay-1">
+          <div class="project-card__icon"><i class="fas fa-terminal"></i></div>
+          <h3 class="project-card__title">Linux Infrastructure Automation</h3>
+          <p class="project-card__desc">
+            Designed and implemented a suite of Bash and Python scripts to automate server
+            provisioning, log monitoring, and scheduled maintenance tasks across a fleet of
+            Oracle Linux servers, reducing manual effort by over 60%.
+          </p>
+          <div class="project-card__tags">
+            <span>Bash</span><span>Python</span><span>Oracle Linux</span><span>Cron</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal delay-2">
+          <div class="project-card__icon"><i class="fas fa-shield-alt"></i></div>
+          <h3 class="project-card__title">System Hardening &amp; Security Implementation</h3>
+          <p class="project-card__desc">
+            Applied CIS benchmark hardening procedures to Oracle Linux environments,
+            configured SELinux policies, audited user access controls, and implemented
+            automated vulnerability scanning pipelines for continuous compliance.
+          </p>
+          <div class="project-card__tags">
+            <span>CIS Benchmarks</span><span>SELinux</span><span>Docker</span><span>Security</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CERTIFICATIONS ===== -->
+  <section class="section" id="certifications">
+    <div class="container">
+      <h2 class="section__title reveal">Certifications</h2>
+      <div class="certs__grid">
+
+        <div class="cert-card reveal">
+          <div class="cert-card__icon"><i class="fas fa-certificate"></i></div>
+          <h4>RF Basics (2G – 5G)</h4>
+        </div>
+
+        <div class="cert-card reveal delay-1">
+          <div class="cert-card__icon"><i class="fas fa-certificate"></i></div>
+          <h4>Drive Testing</h4>
+        </div>
+
+        <div class="cert-card reveal delay-2">
+          <div class="cert-card__icon"><i class="fas fa-certificate"></i></div>
+          <h4>RF Optimization</h4>
+        </div>
+
+        <div class="cert-card reveal delay-3">
+          <div class="cert-card__icon"><i class="fas fa-certificate"></i></div>
+          <h4>Microwave Transmission</h4>
+        </div>
+
+        <div class="cert-card reveal delay-4">
+          <div class="cert-card__icon"><i class="fas fa-certificate"></i></div>
+          <h4>Radio Planning</h4>
+        </div>
+
+        <div class="cert-card reveal delay-5">
+          <div class="cert-card__icon"><i class="fas fa-certificate"></i></div>
+          <h4>4G CSFB Architecture</h4>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section section--alt" id="contact">
+    <div class="container">
+      <h2 class="section__title reveal">Get In Touch</h2>
+      <p class="section__subtitle reveal">
+        I'm currently open to new opportunities. Feel free to reach out!
+      </p>
+      <div class="contact__grid">
+
+        <a href="mailto:abdulhafeez@example.com" class="contact-card reveal">
+          <div class="contact-card__icon"><i class="fas fa-envelope"></i></div>
+          <h3>Email</h3>
+          <p>abdulhafeez@example.com</p>
+        </a>
+
+        <a href="https://linkedin.com/in/abdulhafeez" target="_blank" rel="noopener noreferrer" class="contact-card reveal delay-1">
+          <div class="contact-card__icon"><i class="fab fa-linkedin-in"></i></div>
+          <h3>LinkedIn</h3>
+          <p>linkedin.com/in/abdulhafeez</p>
+        </a>
+
+        <a href="https://github.com/AbdulHafith169" target="_blank" rel="noopener noreferrer" class="contact-card reveal delay-2">
+          <div class="contact-card__icon"><i class="fab fa-github"></i></div>
+          <h3>GitHub</h3>
+          <p>github.com/AbdulHafith169</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">&copy; <span id="year"></span> Abdul Hafeez Mohamed Abu-Grara. All rights reserved.</p>
+      <div class="footer__socials">
+        <a href="mailto:abdulhafeez@example.com" aria-label="Email" class="social-icon social-icon--sm"><i class="fas fa-envelope"></i></a>
+        <a href="https://linkedin.com/in/abdulhafeez" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon social-icon--sm"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/AbdulHafith169" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-icon social-icon--sm"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
