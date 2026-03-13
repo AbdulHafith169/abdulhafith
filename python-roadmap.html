@@ -1,0 +1,1097 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Python Roadmap — Learn Python from zero to mastery. A structured, step-by-step guide by Abdulhafith Abu Ighrarah." />
+    <title>Python Roadmap — Zero to Mastery | Abdulhafith</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons (Font Awesome) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      /* ── Roadmap-specific styles ── */
+
+      .roadmap-hero {
+        padding: calc(var(--header-h) + 4rem) 0 4rem;
+        text-align: center;
+      }
+
+      .roadmap-hero__eyebrow {
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--primary);
+        margin-bottom: 0.75rem;
+      }
+
+      .roadmap-hero__title {
+        font-size: clamp(2rem, 5vw, 3.2rem);
+        font-weight: 700;
+        margin: 0 0 1rem;
+        line-height: 1.15;
+      }
+
+      .roadmap-hero__title span {
+        background: linear-gradient(90deg, var(--primary), var(--primary-2));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .roadmap-hero__subtitle {
+        font-size: 1.1rem;
+        color: var(--muted);
+        max-width: 620px;
+        margin: 0 auto 2rem;
+      }
+
+      /* Phase strip */
+      .phases-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-bottom: 3.5rem;
+      }
+
+      .phase-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.45rem 1rem;
+        border-radius: 999px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--text);
+        text-decoration: none;
+        transition: background 0.2s, border-color 0.2s;
+      }
+
+      .phase-pill:hover,
+      .phase-pill:focus-visible {
+        background: var(--surface-2);
+        border-color: var(--primary);
+        outline: none;
+      }
+
+      .phase-pill i {
+        color: var(--primary);
+      }
+
+      /* Timeline / phase blocks */
+      .phase {
+        position: relative;
+        margin-bottom: 3.5rem;
+      }
+
+      .phase__header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .phase__number {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.8rem;
+        height: 2.8rem;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--primary), var(--primary-2));
+        color: #fff;
+        font-weight: 700;
+        font-size: 1rem;
+        flex-shrink: 0;
+      }
+
+      .phase__title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      .phase__title small {
+        display: block;
+        font-size: 0.85rem;
+        font-weight: 400;
+        color: var(--muted);
+        margin-top: 0.1rem;
+      }
+
+      /* Grid of topic cards inside a phase */
+      .topics-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+        gap: 1.25rem;
+      }
+
+      .topic-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 1.25rem 1.4rem;
+        transition: border-color 0.2s, background 0.2s;
+      }
+
+      .topic-card:hover {
+        border-color: var(--primary);
+        background: var(--surface-2);
+      }
+
+      .topic-card__title {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-size: 1rem;
+        font-weight: 600;
+        margin: 0 0 0.8rem;
+      }
+
+      .topic-card__title i {
+        color: var(--primary-2);
+        font-size: 1.05rem;
+        flex-shrink: 0;
+      }
+
+      .topic-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+      }
+
+      .topic-card ul li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+        font-size: 0.88rem;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .topic-card ul li i {
+        color: var(--primary);
+        margin-top: 0.2rem;
+        flex-shrink: 0;
+        font-size: 0.7rem;
+      }
+
+      /* Tip / callout box */
+      .callout {
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+        background: rgba(124, 92, 255, 0.1);
+        border: 1px solid rgba(124, 92, 255, 0.35);
+        border-radius: var(--radius);
+        padding: 1.1rem 1.4rem;
+        margin-bottom: 3rem;
+      }
+
+      .callout i {
+        color: var(--primary);
+        font-size: 1.2rem;
+        margin-top: 0.15rem;
+        flex-shrink: 0;
+      }
+
+      .callout p {
+        margin: 0;
+        font-size: 0.92rem;
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      .callout strong {
+        color: var(--primary-2);
+      }
+
+      /* Resources section */
+      .resources-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.25rem;
+      }
+
+      .resource-card {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 1.25rem 1.4rem;
+        transition: border-color 0.2s;
+      }
+
+      .resource-card:hover {
+        border-color: var(--primary-2);
+      }
+
+      .resource-card__type {
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--primary-2);
+      }
+
+      .resource-card__name {
+        font-size: 0.97rem;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      .resource-card__desc {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin: 0;
+        line-height: 1.5;
+      }
+
+      /* Divider between phases */
+      .phase-divider {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin: 0 0 2.5rem;
+        color: var(--muted);
+        font-size: 0.8rem;
+      }
+
+      .phase-divider::before,
+      .phase-divider::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: var(--border);
+      }
+
+      /* Back link */
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+        color: var(--muted);
+        transition: color 0.2s;
+        margin-bottom: 2rem;
+      }
+
+      .back-link:hover {
+        color: var(--primary);
+      }
+
+      @media (max-width: 600px) {
+        .topics-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header / Nav -->
+    <header class="site-header" id="top">
+      <nav class="nav container" aria-label="Primary navigation">
+        <a class="brand" href="index.html" aria-label="Back to portfolio">
+          <span class="brand__mark">AI</span>
+          <span class="brand__text">Abdulhafith</span>
+        </a>
+
+        <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+        </button>
+
+        <div class="nav__links" id="navLinks">
+          <a href="index.html#about">About</a>
+          <a href="index.html#skills">Skills</a>
+          <a href="index.html#experience">Experience</a>
+          <a href="index.html#projects">Projects</a>
+          <a href="index.html#certifications">Certifications</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+          <i class="fa-solid fa-moon" id="themeIcon" aria-hidden="true"></i>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="roadmap-hero">
+        <div class="container">
+          <p class="roadmap-hero__eyebrow reveal">
+            <i class="fa-brands fa-python" aria-hidden="true"></i>
+            Learning Roadmap
+          </p>
+          <h1 class="roadmap-hero__title reveal">
+            Master Python<br /><span>from Zero</span>
+          </h1>
+          <p class="roadmap-hero__subtitle reveal">
+            A structured, phase-by-phase guide that takes you from writing your first line of Python
+            to building real-world projects with confidence.
+          </p>
+
+          <!-- Quick-jump pills -->
+          <nav class="phases-nav reveal" aria-label="Roadmap phases">
+            <a class="phase-pill" href="#phase1">
+              <i class="fa-solid fa-seedling" aria-hidden="true"></i> Phase 1 — Foundations
+            </a>
+            <a class="phase-pill" href="#phase2">
+              <i class="fa-solid fa-code" aria-hidden="true"></i> Phase 2 — Core Python
+            </a>
+            <a class="phase-pill" href="#phase3">
+              <i class="fa-solid fa-layer-group" aria-hidden="true"></i> Phase 3 — Intermediate
+            </a>
+            <a class="phase-pill" href="#phase4">
+              <i class="fa-solid fa-flask" aria-hidden="true"></i> Phase 4 — Libraries
+            </a>
+            <a class="phase-pill" href="#phase5">
+              <i class="fa-solid fa-rocket" aria-hidden="true"></i> Phase 5 — Advanced
+            </a>
+            <a class="phase-pill" href="#phase6">
+              <i class="fa-solid fa-compass" aria-hidden="true"></i> Phase 6 — Specialise
+            </a>
+            <a class="phase-pill" href="#resources">
+              <i class="fa-solid fa-book-open" aria-hidden="true"></i> Resources
+            </a>
+          </nav>
+        </div>
+      </section>
+
+      <!-- Roadmap body -->
+      <div class="section">
+        <div class="container">
+
+          <a class="back-link reveal" href="index.html">
+            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+            Back to Portfolio
+          </a>
+
+          <!-- Callout -->
+          <div class="callout reveal">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            <p>
+              <strong>How to use this roadmap:</strong> Work through each phase in order.
+              Don't rush — understanding is more important than speed.
+              Build at least one small project per phase to solidify what you learn.
+            </p>
+          </div>
+
+          <!-- ── Phase 1 ── -->
+          <section class="phase reveal" id="phase1">
+            <div class="phase__header">
+              <div class="phase__number">1</div>
+              <h2 class="phase__title">
+                Foundations
+                <small>Get Python running and learn the absolute basics</small>
+              </h2>
+            </div>
+
+            <div class="topics-grid">
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-download" aria-hidden="true"></i>
+                  Setup & Environment
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Install Python 3 (python.org)</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Choose an editor — VS Code or PyCharm</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Run your first script: <code>print("Hello, World!")</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Use the interactive REPL (<code>python3</code>)</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Understand <code>pip</code> for packages</li>
+                </ul>
+              </div>
+
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-cube" aria-hidden="true"></i>
+                  Variables & Data Types
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>int</code>, <code>float</code>, <code>str</code>, <code>bool</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Variable assignment and naming rules</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>type()</code> and dynamic typing</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>None</code> — the null value</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Type casting: <code>int()</code>, <code>str()</code>, <code>float()</code></li>
+                </ul>
+              </div>
+
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-calculator" aria-hidden="true"></i>
+                  Operators
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Arithmetic: <code>+ - * / // % **</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Comparison: <code>== != &lt; &gt; &lt;= &gt;=</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Logical: <code>and or not</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Assignment operators: <code>+= -= *=</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Membership: <code>in</code>, <code>not in</code></li>
+                </ul>
+              </div>
+
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-keyboard" aria-hidden="true"></i>
+                  Input & Output
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>print()</code> — output to the console</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>input()</code> — read user input</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> f-strings for formatted output</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>format()</code> and <code>%</code> formatting</li>
+                </ul>
+              </div>
+
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-code-branch" aria-hidden="true"></i>
+                  Control Flow
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>if</code> / <code>elif</code> / <code>else</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Indentation rules (Python uses whitespace)</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Nested conditions</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Ternary expression: <code>x if cond else y</code></li>
+                </ul>
+              </div>
+
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-rotate" aria-hidden="true"></i>
+                  Loops
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>for</code> loop and <code>range()</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>while</code> loop</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>break</code>, <code>continue</code>, <code>pass</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>else</code> clause on loops</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Nested loops</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <div class="phase-divider reveal">Phase 2 starts here</div>
+
+          <!-- ── Phase 2 ── -->
+          <section class="phase reveal" id="phase2">
+            <div class="phase__header">
+              <div class="phase__number">2</div>
+              <h2 class="phase__title">
+                Core Python
+                <small>Data structures, functions, and error handling</small>
+              </h2>
+            </div>
+
+            <div class="topics-grid">
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-list" aria-hidden="true"></i>
+                  Lists & Tuples
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Create, index, and slice lists</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> List methods: <code>append</code>, <code>pop</code>, <code>sort</code>, <code>reverse</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Tuples — immutable sequences</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Unpacking: <code>a, b = (1, 2)</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Nested lists (2D arrays)</li>
+                </ul>
+              </div>
+
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-table-cells" aria-hidden="true"></i>
+                  Dictionaries & Sets
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Create and access dict keys/values</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Dict methods: <code>get</code>, <code>keys</code>, <code>values</code>, <code>items</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Sets — unique, unordered elements</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Set operations: union, intersection, difference</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>defaultdict</code> from <code>collections</code></li>
+                </ul>
+              </div>
+
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-font" aria-hidden="true"></i>
+                  Strings in Depth
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Slicing, indexing, and iteration</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> String methods: <code>split</code>, <code>join</code>, <code>strip</code>, <code>replace</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>upper</code>, <code>lower</code>, <code>title</code>, <code>find</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> String immutability</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Multi-line strings with triple quotes</li>
+                </ul>
+              </div>
+
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-function" aria-hidden="true"></i>
+                  Functions
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Define with <code>def</code>, call, and <code>return</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Positional and keyword arguments</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Default parameter values</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>*args</code> and <code>**kwargs</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Scope: local vs global variables</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Lambda (anonymous) functions</li>
+                </ul>
+              </div>
+
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+                  Error Handling
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>try</code> / <code>except</code> / <code>else</code> / <code>finally</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Common exceptions: <code>ValueError</code>, <code>TypeError</code>, <code>KeyError</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Raise custom exceptions with <code>raise</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Define custom exception classes</li>
+                </ul>
+              </div>
+
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+                  File I/O
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Open, read, write files with <code>open()</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Modes: <code>r</code>, <code>w</code>, <code>a</code>, <code>rb</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> The <code>with</code> statement (context manager)</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Reading CSV files with <code>csv</code> module</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Working with JSON: <code>json.load</code> / <code>json.dump</code></li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <div class="phase-divider reveal">Phase 3 starts here</div>
+
+          <!-- ── Phase 3 ── -->
+          <section class="phase reveal" id="phase3">
+            <div class="phase__header">
+              <div class="phase__number">3</div>
+              <h2 class="phase__title">
+                Intermediate Python
+                <small>OOP, comprehensions, modules, and the standard library</small>
+              </h2>
+            </div>
+
+            <div class="topics-grid">
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-object-group" aria-hidden="true"></i>
+                  Object-Oriented Programming
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Classes and objects</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>__init__</code>, <code>self</code>, and instance attributes</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Instance methods, class methods, static methods</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Inheritance and method overriding</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Encapsulation: private/protected attributes</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Polymorphism and duck typing</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Dunder (magic) methods: <code>__str__</code>, <code>__repr__</code>, <code>__len__</code></li>
+                </ul>
+              </div>
+
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-compress" aria-hidden="true"></i>
+                  Comprehensions
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> List comprehensions: <code>[x*2 for x in lst]</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Dict comprehensions: <code>{k: v for k, v in d.items()}</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Set comprehensions</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Generator expressions: <code>(x for x in range(1000))</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Conditional filtering in comprehensions</li>
+                </ul>
+              </div>
+
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-puzzle-piece" aria-hidden="true"></i>
+                  Modules & Packages
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Import a module: <code>import os</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> From-import: <code>from math import sqrt</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Create your own module</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Packages: <code>__init__.py</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Virtual environments with <code>venv</code></li>
+                </ul>
+              </div>
+
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-toolbox" aria-hidden="true"></i>
+                  Useful Standard Library
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>os</code> and <code>pathlib</code> — file system</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>sys</code> — interpreter interaction</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>datetime</code> — dates and times</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>re</code> — regular expressions</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>collections</code> — namedtuple, Counter, deque</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>itertools</code> and <code>functools</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>random</code> and <code>math</code></li>
+                </ul>
+              </div>
+
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-vial" aria-hidden="true"></i>
+                  Testing Basics
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Write unit tests with <code>unittest</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>assert</code> statements</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>pytest</code> — simpler test framework</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Test structure: arrange, act, assert</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Mocking with <code>unittest.mock</code></li>
+                </ul>
+              </div>
+
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-arrows-spin" aria-hidden="true"></i>
+                  Iterators & Generators
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>iter()</code> and <code>next()</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Create a custom iterator class</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Generator functions with <code>yield</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Benefits: lazy evaluation, memory efficiency</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>yield from</code> for delegation</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <div class="phase-divider reveal">Phase 4 starts here</div>
+
+          <!-- ── Phase 4 ── -->
+          <section class="phase reveal" id="phase4">
+            <div class="phase__header">
+              <div class="phase__number">4</div>
+              <h2 class="phase__title">
+                Key Libraries
+                <small>The ecosystem that makes Python powerful</small>
+              </h2>
+            </div>
+
+            <div class="topics-grid">
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-table" aria-hidden="true"></i>
+                  NumPy
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Arrays vs Python lists</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Array creation: <code>arange</code>, <code>zeros</code>, <code>linspace</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Slicing, indexing, reshaping</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Vectorized operations (no loops)</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Mathematical functions: <code>mean</code>, <code>std</code>, <code>dot</code></li>
+                </ul>
+              </div>
+
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-chart-bar" aria-hidden="true"></i>
+                  Pandas
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Series and DataFrame</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Read CSV / Excel: <code>pd.read_csv()</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Filtering, selection (<code>loc</code>, <code>iloc</code>)</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> GroupBy and aggregations</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Handling missing data (<code>NaN</code>)</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Merging and joining DataFrames</li>
+                </ul>
+              </div>
+
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+                  Matplotlib & Seaborn
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Line, bar, scatter, and histogram plots</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Labels, titles, and legends</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Subplots and figure sizing</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Seaborn for statistical plots</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Save figures to file</li>
+                </ul>
+              </div>
+
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-globe" aria-hidden="true"></i>
+                  Requests & APIs
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> HTTP basics: GET, POST, headers</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>requests.get(url)</code> and <code>.json()</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Handling response status codes</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Authentication (API keys, OAuth)</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Consuming public REST APIs</li>
+                </ul>
+              </div>
+
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-terminal" aria-hidden="true"></i>
+                  Automation with Python
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Automate file operations with <code>os</code> / <code>shutil</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Schedule tasks with <code>schedule</code> library</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Send emails with <code>smtplib</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Parse web pages with <code>BeautifulSoup</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Automate Excel with <code>openpyxl</code></li>
+                </ul>
+              </div>
+
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-database" aria-hidden="true"></i>
+                  Databases
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> SQLite with built-in <code>sqlite3</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> CRUD operations (Create, Read, Update, Delete)</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> ORM basics with <code>SQLAlchemy</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Connect to PostgreSQL / MySQL</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Use Pandas to query a database</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <div class="phase-divider reveal">Phase 5 starts here</div>
+
+          <!-- ── Phase 5 ── -->
+          <section class="phase reveal" id="phase5">
+            <div class="phase__header">
+              <div class="phase__number">5</div>
+              <h2 class="phase__title">
+                Advanced Python
+                <small>Deep language features and performance patterns</small>
+              </h2>
+            </div>
+
+            <div class="topics-grid">
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+                  Decorators
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Functions as first-class objects</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Higher-order functions</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Write a simple decorator</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>@wraps</code> from <code>functools</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Parametrized decorators</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Class-based decorators</li>
+                </ul>
+              </div>
+
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+                  Concurrency & Async
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Threads with <code>threading</code> module</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Processes with <code>multiprocessing</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>asyncio</code> — event loop basics</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>async def</code> and <code>await</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>aiohttp</code> for async HTTP</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> When to use threads vs processes vs async</li>
+                </ul>
+              </div>
+
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-tags" aria-hidden="true"></i>
+                  Type Hints & Annotations
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Basic annotations: <code>def f(x: int) -> str</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>List</code>, <code>Dict</code>, <code>Optional</code> from <code>typing</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Static analysis with <code>mypy</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Dataclasses with typed fields</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Pydantic for data validation</li>
+                </ul>
+              </div>
+
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-tachometer-alt" aria-hidden="true"></i>
+                  Performance & Profiling
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Profile with <code>cProfile</code> and <code>timeit</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Big-O complexity awareness</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Memory optimization techniques</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>__slots__</code> for memory-efficient classes</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Speed up with NumPy and vectorization</li>
+                </ul>
+              </div>
+
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-box" aria-hidden="true"></i>
+                  Context Managers
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>__enter__</code> and <code>__exit__</code> protocol</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Write a custom context manager</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>@contextmanager</code> from <code>contextlib</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Use cases: files, locks, DB connections</li>
+                </ul>
+              </div>
+
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-magnifying-glass-chart" aria-hidden="true"></i>
+                  Design Patterns in Python
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Singleton, Factory, Observer patterns</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Strategy pattern with functions</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Dependency injection</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Repository pattern for data access</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <div class="phase-divider reveal">Phase 6 starts here</div>
+
+          <!-- ── Phase 6 ── -->
+          <section class="phase reveal" id="phase6">
+            <div class="phase__header">
+              <div class="phase__number">6</div>
+              <h2 class="phase__title">
+                Specialise
+                <small>Choose a domain and go deep</small>
+              </h2>
+            </div>
+
+            <div class="topics-grid">
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-globe" aria-hidden="true"></i>
+                  Web Development
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Flask — lightweight micro-framework</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Django — full-stack web framework</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> FastAPI — modern async REST APIs</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Templates, routing, middleware</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Authentication and sessions</li>
+                </ul>
+              </div>
+
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-brain" aria-hidden="true"></i>
+                  Data Science & ML
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Exploratory Data Analysis (EDA)</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> <code>scikit-learn</code> — ML algorithms</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Supervised vs unsupervised learning</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Deep learning with TensorFlow / PyTorch</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Jupyter Notebooks for exploration</li>
+                </ul>
+              </div>
+
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-gears" aria-hidden="true"></i>
+                  DevOps & Automation
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Ansible for configuration management</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> CI/CD pipeline scripts</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Docker SDK for Python</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Kubernetes client library</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Infrastructure as Code with Pulumi</li>
+                </ul>
+              </div>
+
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                  Security / Pentesting
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Network scanning with <code>scapy</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Hashing and cryptography: <code>hashlib</code>, <code>cryptography</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Build simple port scanners</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Automate security checks</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Capture and parse network packets</li>
+                </ul>
+              </div>
+
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-signal" aria-hidden="true"></i>
+                  Telecom & RF with Python
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Parse drive-test log files</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Compute KPIs with Pandas</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Plot coverage maps with Matplotlib / Folium</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Automate post-processing workflows</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Integrate with TEMS / Actix data exports</li>
+                </ul>
+              </div>
+
+              <div class="topic-card">
+                <h3 class="topic-card__title">
+                  <i class="fa-solid fa-box-archive" aria-hidden="true"></i>
+                  Best Practices & Packaging
+                </h3>
+                <ul>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> PEP 8 code style + <code>black</code> formatter</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Linting with <code>flake8</code> / <code>ruff</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Semantic versioning</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Package with <code>pyproject.toml</code></li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Publish to PyPI</li>
+                  <li><i class="fa-solid fa-circle" aria-hidden="true"></i> Write clear documentation with docstrings</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <div class="phase-divider reveal">Resources</div>
+
+          <!-- ── Resources ── -->
+          <section class="phase reveal" id="resources">
+            <div class="phase__header">
+              <div class="phase__number"><i class="fa-solid fa-book-open" aria-hidden="true"></i></div>
+              <h2 class="phase__title">
+                Recommended Resources
+                <small>Free and premium materials to accelerate learning</small>
+              </h2>
+            </div>
+
+            <div class="resources-grid">
+              <div class="resource-card">
+                <span class="resource-card__type">📖 Official Docs</span>
+                <p class="resource-card__name">docs.python.org</p>
+                <p class="resource-card__desc">The official Python tutorial and library reference — always up to date and free.</p>
+              </div>
+
+              <div class="resource-card">
+                <span class="resource-card__type">📚 Book</span>
+                <p class="resource-card__name">Automate the Boring Stuff with Python</p>
+                <p class="resource-card__desc">Al Sweigart's practical automation book — available free online at automatetheboringstuff.com.</p>
+              </div>
+
+              <div class="resource-card">
+                <span class="resource-card__type">🎓 Course</span>
+                <p class="resource-card__name">CS50P — Introduction to Python (Harvard)</p>
+                <p class="resource-card__desc">Free, rigorous, project-based Python course from Harvard via edX.</p>
+              </div>
+
+              <div class="resource-card">
+                <span class="resource-card__type">🎓 Course</span>
+                <p class="resource-card__name">100 Days of Code — Python Bootcamp</p>
+                <p class="resource-card__desc">Angela Yu's comprehensive Udemy course. Build 100 real projects in 100 days.</p>
+              </div>
+
+              <div class="resource-card">
+                <span class="resource-card__type">🧑‍💻 Practice</span>
+                <p class="resource-card__name">Exercism.io — Python Track</p>
+                <p class="resource-card__desc">100+ exercises with mentor feedback. Excellent for deepening fundamentals.</p>
+              </div>
+
+              <div class="resource-card">
+                <span class="resource-card__type">🧑‍💻 Practice</span>
+                <p class="resource-card__name">LeetCode / HackerRank</p>
+                <p class="resource-card__desc">Coding challenges that sharpen your problem-solving and data structure skills.</p>
+              </div>
+
+              <div class="resource-card">
+                <span class="resource-card__type">📚 Book</span>
+                <p class="resource-card__name">Fluent Python (2nd ed.) — Luciano Ramalho</p>
+                <p class="resource-card__desc">The go-to book for mastering advanced Python idioms, data model, and internals.</p>
+              </div>
+
+              <div class="resource-card">
+                <span class="resource-card__type">🎬 YouTube</span>
+                <p class="resource-card__name">Corey Schafer's Python Tutorials</p>
+                <p class="resource-card__desc">Clear, well-paced tutorials covering beginner through advanced topics. Free on YouTube.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Back link bottom -->
+          <div class="reveal" style="margin-top: 3rem;">
+            <a class="back-link" href="index.html">
+              <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+              Back to Portfolio
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer__grid">
+        <p class="footer__copy">© <span id="year"></span> Abdulhafith Abu Ighrarah. All rights reserved.</p>
+        <div class="footer__links">
+          <a class="icon-link" href="mailto:abdulhavizeag@gmail.com" aria-label="Email">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          </a>
+          <a class="icon-link" href="https://www.linkedin.com/in/abd-ulhafize-mohammed-8a8134227/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+          </a>
+          <a class="icon-link" href="https://github.com/AbdulHafith169" target="_blank" rel="noreferrer" aria-label="GitHub">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
