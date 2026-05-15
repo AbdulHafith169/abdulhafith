@@ -97,7 +97,7 @@
     const message = document.getElementById("message")?.value?.trim() || "";
 
     // Replace with your real email
-    const to = "your.email@example.com";
+    const to = "abdulhavizeag@gmail.com";
 
     const fullSubject = subject ? subject : "Portfolio Contact";
     const bodyLines = [
